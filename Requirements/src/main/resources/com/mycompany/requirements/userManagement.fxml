@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="904.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.requirements.UserManagementController">
+    <fx:define>
+        <Font fx:id="titleFont" size="20.0" />
+    </fx:define>
+    <children>
+        <Label text="User Management">
+            <font>
+                <Font size="31.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="40.0" top="20.0" />
+            </VBox.margin>
+        </Label>
+        <Label fx:id="standardUserMessageLabel" text="" visible="false">
+            <VBox.margin>
+                <Insets bottom="20.0" />
+            </VBox.margin>
+        </Label>
+
+        <GridPane fx:id="updateOwnAccountGrid" alignment="CENTER" prefHeight="137.0" prefWidth="600.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="350.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Update Your Account" font="$titleFont" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" alignment="CENTER"/>
+                <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1" alignment="CENTER"/>
+                <TextField fx:id="updateUsernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER"/>
+                <PasswordField fx:id="updatePasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="3" alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button fx:id="updateAccountButton" mnemonicParsing="false" onAction="#onUpdateAccountButtonClicked" text="Update" />
+                        <Button fx:id="updateCancelButton" mnemonicParsing="false" onAction="#onUpdateCancelButtonClicked" text="Cancel" />
+                    </children>
+                </VBox>
+            </children>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </GridPane>
+
+        <GridPane fx:id="createAccountGrid" alignment="CENTER" prefHeight="137.0" prefWidth="600.0" visible="false">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="350.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER" text="Create a New Account">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" text="New Username: " GridPane.rowIndex="1" />
+                <Label alignment="CENTER" text="New Password:" GridPane.rowIndex="2" />
+                <Label alignment="CENTER" text="Account Type:" GridPane.rowIndex="3" />
+                <TextField fx:id="createUsernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <PasswordField fx:id="createPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="3" alignment="CENTER_LEFT">
+                    <children>
+                        <ChoiceBox fx:id="createAccountTypeChoiceBox">
+                        </ChoiceBox>
+                    </children>
+                </VBox>
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="5" alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button fx:id="createCancelButton" mnemonicParsing="false" onAction="#onCreateCancelButtonClicked" text="Cancel" />
+                        <Button fx:id="createUserButton" mnemonicParsing="false" onAction="#onCreateUserButtonClicked" text="Create" />
+                    </children>
+                </VBox>
+            </children>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </GridPane>
+
+        <GridPane fx:id="updateAccountGridAdmin" alignment="CENTER" prefHeight="137.0" prefWidth="600.0" visible="false">
+        </GridPane>
+
+        <GridPane fx:id="updateTypeGrid" alignment="CENTER" prefHeight="137.0" prefWidth="600.0" visible="false">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="350.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER" text="Update Account Type" font="$titleFont" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>  
+                <Label alignment="CENTER" text="Username: " GridPane.rowIndex="1" GridPane.columnIndex="0"/> 
+                <TextField fx:id="updateTypeUsernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label alignment="CENTER" text="New Account Type:" GridPane.rowIndex="2" GridPane.columnIndex="0"/> 
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER_LEFT">
+                    <children>
+                        <ChoiceBox fx:id="updateAccountTypeChoiceBox">
+                        </ChoiceBox>
+                    </children>
+                </VBox>
+
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button fx:id="updateTypeCancelButton" mnemonicParsing="false" onAction="#onUpdateTypeCancelButtonClicked" text="Cancel" />
+                        <Button fx:id="updateTypeButton" mnemonicParsing="false" onAction="#onUpdateTypeButtonClicked" text="Update" />
+                    </children>
+                </VBox>
+            </children>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </GridPane>
+
+        <GridPane fx:id="deleteAccountGrid" alignment="CENTER" prefHeight="137.0" prefWidth="600.0" visible="false">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="350.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER" text="Delete an Account">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label alignment="CENTER" text="Username: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="deleteUsernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <VBox GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER_RIGHT" spacing="10.0">
+                    <children>
+                        <Button fx:id="deleteCancelButton" mnemonicParsing="false" onAction="#onDeleteCancelButtonClicked" text="Cancel" />
+                        <Button fx:id="deleteUserButton" mnemonicParsing="false" onAction="#onDeleteUserButtonClicked" text="Delete" />
+                    </children>
+                </VBox>
+            </children>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </GridPane>
+
+        <VBox alignment="CENTER"> 
+            <children> 
+                <Button fx:id="UserManagementLogoutButton" mnemonicParsing="false" onAction="#onUserManagementLogoutButtonClicked" text="Logout">
+                    <VBox.margin>
+                        <Insets top="80.0" />
+                    </VBox.margin>
+                </Button> 
+            </children> 
+        </VBox>
+
+    </children>
+</VBox>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainVBox" alignment="TOP_CENTER" prefHeight="667.0" prefWidth="655.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.mycompany.requirements.FileManagementController">
+    <Label text="File Management">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+
+    <!-- Create File Section -->
+    <GridPane fx:id="createFileGrid" prefHeight="120.0" prefWidth="411.0">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="165.0" />
+            <ColumnConstraints prefWidth="430.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints prefHeight="28.0" />
+            <RowConstraints prefHeight="32.0" />
+            <RowConstraints prefHeight="32.0" />
+            <RowConstraints prefHeight="30.0" />
+        </rowConstraints>
+        <children>
+            <Label text="Create File" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <Label text="File Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="createFileNameTextField" prefWidth="283.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="File Content:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextArea fx:id="createFileContentTextArea" prefWidth="283.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <children>
+                    <Button fx:id="createFileButton" text="Create" onAction="#onCreateFileButtonClicked" />
+                    <Button fx:id="createFileCancelButton" text="Cancel" onAction="#onCreateFileCancelButtonClicked" GridPane.columnIndex="1" />
+                </children>
+            </GridPane>
+        </children>
+    </GridPane>
+
+    <!-- Update File Section -->
+    <GridPane fx:id="updateFileGrid" prefHeight="90.0" prefWidth="411.0">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="165.0" />
+            <ColumnConstraints prefWidth="430.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints prefHeight="28.0" />
+            <RowConstraints prefHeight="32.0" />
+            <RowConstraints prefHeight="30.0" />
+        </rowConstraints>
+        <children>
+            <Label text="Update File" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <Label text="File Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="updateFileNameTextField" prefWidth="283.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <children>
+                    <Button fx:id="updateFileButton" text="Update" onAction="#onUpdateFileButtonClicked" />
+                    <Button fx:id="updateFileCancelButton" text="Cancel" onAction="#onUpdateFileCancelButtonClicked" GridPane.columnIndex="1" />
+                </children>
+            </GridPane>
+        </children>
+    </GridPane>
+
+    <!-- Delete File Section -->
+    <GridPane fx:id="deleteFileGrid" prefHeight="90.0" prefWidth="411.0">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="165.0" />
+            <ColumnConstraints prefWidth="430.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints prefHeight="28.0" />
+            <RowConstraints prefHeight="32.0" />
+            <RowConstraints prefHeight="30.0" />
+        </rowConstraints>
+        <children>
+            <Label text="Delete File" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <Label text="File Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="deleteFileNameTextField" prefWidth="283.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <children>
+                    <Button fx:id="deleteFileButton" text="Delete" onAction="#onDeleteFileButtonClicked" />
+                    <Button fx:id="deleteFileCancelButton" text="Cancel" onAction="#onDeleteFileCancelButtonClicked" GridPane.columnIndex="1" />
+                </children>
+            </GridPane>
+        </children>
+    </GridPane>
+
+    <!-- Share File (Setting Permissions) Section -->
+    <GridPane fx:id="setPermissionsGrid" prefHeight="120.0" prefWidth="411.0">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="165.0" />
+            <ColumnConstraints prefWidth="430.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints prefHeight="28.0" />
+            <RowConstraints prefHeight="32.0" />
+            <RowConstraints prefHeight="30.0" />
+            <RowConstraints prefHeight="30.0" />
+        </rowConstraints>
+        <children>
+            <Label text="Share File (Set Permissions)" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <Label text="File Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="setPermissionsFileNameTextField" prefWidth="283.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Share With:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="shareWithTextField" prefWidth="283.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Set Permission:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="100.0" />
+                    <ColumnConstraints prefWidth="100.0" />
+                    <ColumnConstraints prefWidth="120.0" />
+                </columnConstraints>
+                <children>
+                    <Button fx:id="readPermissionButton" text="Read Only" onAction="#onReadPermissionButtonClicked" GridPane.columnIndex="0" />
+                    <Button fx:id="writePermissionButton" text="Write Only" onAction="#onWritePermissionButtonClicked" GridPane.columnIndex="1" />
+                    <Button fx:id="readAndWritePermissionButton" text="Read &amp; Write" onAction="#onReadAndWritePermissionButtonClicked" GridPane.columnIndex="2" />
+                </children>
+            </GridPane>
+
+        </children>
+    </GridPane>
+
+    <!-- Access File Section -->
+    <!-- Access File Section -->
+    <GridPane fx:id="accessFileGrid" prefHeight="120.0" prefWidth="411.0">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="165.0" />
+            <ColumnConstraints prefWidth="430.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints prefHeight="28.0" />
+            <RowConstraints prefHeight="32.0" />
+            <RowConstraints prefHeight="30.0" />
+            <RowConstraints prefHeight="60.0" /> <!-- New row for TextArea -->
+            <RowConstraints prefHeight="30.0" /> <!-- New row for Submit Button -->
+        </rowConstraints>
+        <children>
+            <Label text="Access File" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <Label text="File Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="accessFileNameTextField" prefWidth="283.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <children>
+                    <Button fx:id="accessFileButton" text="Access" onAction="#onAccessFileButtonClicked" />
+                    <Button fx:id="accessFileCancelButton" text="Cancel" onAction="#onAccessFileCancelButtonClicked" GridPane.columnIndex="1" />
+                </children>
+            </GridPane>
+
+            <!-- Hidden TextArea for Write Only Mode -->
+            <Label fx:id="writeFileLabel" text="Enter new content:" GridPane.columnIndex="0" GridPane.rowIndex="3" visible="false"/>
+            <TextArea fx:id="writeFileTextArea" prefWidth="300.0" prefHeight="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3" visible="false"/>
+            <Button fx:id="submitWriteButton" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="4" onAction="#onSubmitWriteButtonClicked" visible="false"/>
+        </children>
+    </GridPane>
+    <Button fx:id="fileManagementLogoutButton"
+            text="Logout"
+            onAction="#onFileManagementLogoutButtonClicked"
+            layoutX="10" layoutY="10" />
+
+
+</VBox>

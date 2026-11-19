@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.requirements.LoginOrRegisterController">
+    <children>
+        <VBox layoutX="56.0" layoutY="94.0" prefHeight="96.0" prefWidth="86.0">
+            <children>
+                <Label text="Username">
+                    <VBox.margin>
+                        <Insets top="25.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="15.0" left="10.0" />
+                    </padding>
+                </Label>
+                <Label text="Password" wrapText="true">
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </Label>
+            </children>
+        </VBox>
+        <Label layoutX="102.0" layoutY="37.0" text="Login or Register">
+            <font>
+                <Font size="31.0" />
+            </font>
+        </Label>
+        <VBox layoutX="142.0" layoutY="94.0" prefHeight="96.0" prefWidth="260.0">
+            <children>
+                <TextField fx:id="usernameField">
+                    <VBox.margin>
+                        <Insets top="25.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="5.0" />
+                    </padding>
+                </TextField>
+                <PasswordField fx:id="passwordField">
+                    <VBox.margin>
+                        <Insets bottom="5.0" top="6.0" />
+                    </VBox.margin>
+                </PasswordField>
+            </children>
+        </VBox>
+        <HBox layoutX="56.0" layoutY="215.0" prefHeight="26.0" prefWidth="347.0">
+            <children>
+                <Button fx:id="loginButton" alignment="CENTER" mnemonicParsing="false" onAction="#onLoginButtonClicked" text="Login">
+                    <HBox.margin>
+                        <Insets left="80.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="registerButton" alignment="CENTER" mnemonicParsing="false" onAction="#onRegisterButtonClicked" text="Register">
+                    <HBox.margin>
+                        <Insets left="50.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+
+        <TextArea fx:id="commandInputArea" layoutX="56.0" layoutY="340.0" prefHeight="100.0" prefWidth="347.0" promptText="Enter command here..." wrapText="true" />
+        <Button fx:id="executeLocalButton" layoutX="150" layoutY="450.0" mnemonicParsing="false" onAction="#onExecuteButtonClicked" text="Execute Local" />
+        <Button fx:id="executeRemoteButton" layoutX="250" layoutY="450.0" mnemonicParsing="false" onAction="#onExecuteButtonClicked" text="Execute Remote" />
+        <TextArea fx:id="terminalOutputArea" layoutX="56.0" layoutY="470.0" prefHeight="100.0" prefWidth="347.0" promptText="Command Output" wrapText="true" editable="false"/>
+        <Label fx:id="loginErrorMessage" layoutX="56.0" layoutY="280.0" text="" textFill="RED" />
+        <Label fx:id="registrationErrorMessage" layoutX="56.0" layoutY="310.0" text="" textFill="RED" />
+    </children>
+</AnchorPane>
