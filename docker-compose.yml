@@ -1,0 +1,114 @@
+version: '3.9'  
+
+services:
+  container2-load-balancer:
+    container_name: container2-load-balancer
+    image: pedrombmachado/ntu_lubuntu:comp20081
+    ports:
+      - "3088:22"
+    hostname: container2-load-balancer
+    volumes:
+      - docker_comp20081:/home/ntu-user/NetBeansProjects
+    networks:
+      - comp20081_network
+
+  container3-buffer:
+    container_name: container3-buffer
+    image: pedrombmachado/ntu_lubuntu:comp20081
+    ports:
+      - "3086:22"
+    hostname: container3-buffer
+    volumes:
+      - docker_comp20081:/home/ntu-user/NetBeansProjects
+    networks:
+      - comp20081_network
+
+  container4-mqtt-broker:
+    container_name: container4-mqtt-broker
+    image: eclipse-mosquitto:latest  
+    ports:
+      - "3084:22"
+      - "1883:1883"  
+    hostname: container4-mqtt-broker
+    networks:
+      - comp20081_network
+
+  container5-mysql-server:
+    container_name: container5-mysql-server
+    image: mysql:latest  
+    ports:
+      - "3306:3306" 
+      - "3082:22"
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: mysqlUsers 
+      MYSQL_USER: your_db_user 
+      MYSQL_PASSWORD: your_db_password
+    hostname: container5-mysql-server 
+    networks:
+      - comp20081_network
+    volumes:
+      - docker_comp20081:/home/ntu-user/NetBeansProjects
+
+
+  container6-files1:
+    container_name: container6-files1
+    image: pedrombmachado/ntu_lubuntu:comp20081
+    ports:
+      - "3080:22"
+    hostname: container6-files1
+    networks:
+      - comp20081_network
+    volumes:
+      - file_data_1:/chunks
+      - docker_comp20081:/home/ntu-user/NetBeansProjects
+
+  container7-files2:
+    container_name: container7-files2
+    image: pedrombmachado/ntu_lubuntu:comp20081
+    ports:
+      - "3078:22"
+    hostname: container7-files2
+    networks:
+      - comp20081_network
+    volumes:
+      - file_data_2:/chunks
+      - docker_comp20081:/home/ntu-user/NetBeansProjects
+
+  container8-files3:
+    container_name: container8-files3
+    image: pedrombmachado/ntu_lubuntu:comp20081
+    ports:
+      - "3076:22"
+    hostname: container8-files3
+    networks:
+      - comp20081_network
+    volumes:
+      - file_data_3:/chunks
+      - docker_comp20081:/home/ntu-user/NetBeansProjects
+
+  container9-files4:
+    container_name: container9-files4
+    image: pedrombmachado/ntu_lubuntu:comp20081
+    ports:
+      - "3074:22"
+    hostname: container9-files4
+    networks:
+      - comp20081_network
+    volumes:
+      - file_data_4:/chunks
+      - docker_comp20081:/home/ntu-user/NetBeansProjects
+
+
+
+networks:
+  comp20081_network:
+    driver: bridge
+
+volumes:
+  docker_comp20081:/home/ntu-user/NetBeansProjects
+  file_data_1:/chunks
+  file_data_2:/chunks
+  file_data_3:/chunks
+  file_data_4:/chunks
+
